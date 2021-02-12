@@ -1238,12 +1238,8 @@ static const struct usb_device_id option_ids[] = {
 	{ USB_DEVICE(LONGCHEER_VENDOR_ID, LONGCHEER_PRODUCT_U8300),
 	  .driver_info = (kernel_ulong_t)&net_intf4_blacklist },
 	{ USB_DEVICE(LONGCHEER_VENDOR_ID, LONGCHEER_PRODUCT_U9300),
-	  .driver_info = (kernel_ulong_t)&net_intf4_blacklist },
 	{ USB_DEVICE(BROADMOBI_VENDOR_ID, BROADMOBI_PRODUCT_BM806U),
 	  .driver_info = (kernel_ulong_t)&net_intf4_blacklist },
-	
-	
-	
 	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EC21),
 	  .driver_info = (kernel_ulong_t)&net_intf4_blacklist },
 	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EC25),
