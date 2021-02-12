@@ -641,10 +641,11 @@ static const struct driver_info qmi_wwan_info_quirk_quectel_dyncfg = {
  * devices. We need to check the number of endpoints to ensure that we bind to
  * the correct interface.
  */
+
 #define QMI_QUIRK_QUECTEL_DYNCFG(vend, prod) \
        USB_DEVICE_AND_INTERFACE_INFO(vend, prod, USB_CLASS_VENDOR_SPEC, \
                                      USB_SUBCLASS_VENDOR_SPEC, 0xff), \
-       .driver_info = (unsigned long)&qmi_wwan_info_quirk_quectel_dync
+       .driver_info = (unsigned long)&qmi_wwan_info_quirk_quectel_dyncfg
 
 static const struct usb_device_id products[] = {
 	/* 1. CDC ECM like devices match on the control interface */
@@ -743,10 +744,9 @@ static const struct usb_device_id products[] = {
 		USB_DEVICE_AND_INTERFACE_INFO(0x03f0, 0x581d, USB_CLASS_VENDOR_SPEC, 1, 7),
 		.driver_info = (unsigned long)&qmi_wwan_info,
 	},
-
-       {QMI_QUIRK_QUECTEL_DYNCFG(0x2c7c, 0x0125)},     /* Quectel EC25, EC20 R2.0  Mini PCIe */
-       {QMI_QUIRK_QUECTEL_DYNCFG(0x2c7c, 0x0306)},     /* Quectel EP06/EG06/EM06 */
-       {QMI_QUIRK_QUECTEL_DYNCFG(0x2c7c, 0x0512)},     /* Quectel EG12/EM12 */
+//       {QMI_QUIRK_QUECTEL_DYNCFG(0x2c7c, 0x0125)},     /* Quectel EC25, EC20 R2.0  Mini PCIe */
+//       {QMI_QUIRK_QUECTEL_DYNCFG(0x2c7c, 0x0306)},     /* Quectel EP06/EG06/EM06 */
+//       {QMI_QUIRK_QUECTEL_DYNCFG(0x2c7c, 0x0512)},     /* Quectel EG12/EM12 */
 	
 	/* 3. Combined interface devices matching on interface number */
 	{QMI_FIXED_INTF(0x2020, 0x2033, 4)},    /*bm806u */   
