@@ -243,18 +243,17 @@ static void option_instat_callback(struct urb *urb);
 
 
 
-/* These Yuga products use Qualcomm's vendor ID */
+/* These Yuga products use Qualcomm's vendor ID */ 
 #define YUGA_PRODUCT_CLM920_NC5			0x9625
 
 #define QUECTEL_VENDOR_ID			0x2c7c
 /* These Quectel products use Quectel's vendor ID */
-#define QUECTEL_PRODUCT_EC21			0x0121
-#define QUECTEL_PRODUCT_EC25			0x0125
+// #define SIERRA_VENDOR_ID			0x1199
+#define QUECTEL_PRODUCT_EC21                    0x0121
+#define QUECTEL_PRODUCT_EC25                    0x0125
 #define QUECTEL_PRODUCT_BG96                    0x0296
 #define QUECTEL_PRODUCT_EP06                    0x0306
 #define QUECTEL_PRODUCT_EM12                    0x0512
-
-#define SIERRA_VENDOR_ID			0x1199
 
 #define CMOTECH_VENDOR_ID			0x16d8
 #define CMOTECH_PRODUCT_6001			0x6001
@@ -1234,12 +1233,14 @@ static const struct usb_device_id option_ids[] = {
 	/* Yuga products use Qualcomm vendor ID */
 	{ USB_DEVICE(QUALCOMM_VENDOR_ID, YUGA_PRODUCT_CLM920_NC5),
 	  .driver_info = (kernel_ulong_t)&yuga_clm920_nc5_blacklist },
-	/* Quectel products using Quectel vendor ID */
+	/* LONGCHEER products using Quectel vendor ID */
 	{ USB_DEVICE(LONGCHEER_VENDOR_ID, LONGCHEER_PRODUCT_U8300),
-	  .driver_info = (kernel_ulong_t)&net_intf4_blacklist },
 	{ USB_DEVICE(LONGCHEER_VENDOR_ID, LONGCHEER_PRODUCT_U9300),
+	  .driver_info = (kernel_ulong_t)&net_intf4_blacklist },
+	 /* BROADMOBI products using Quectel vendor ID */
 	{ USB_DEVICE(BROADMOBI_VENDOR_ID, BROADMOBI_PRODUCT_BM806U),
 	  .driver_info = (kernel_ulong_t)&net_intf4_blacklist },
+	 /* Quectel products using Quectel vendor ID */
 	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EC21),
 	  .driver_info = (kernel_ulong_t)&net_intf4_blacklist },
 	{ USB_DEVICE(QUECTEL_VENDOR_ID, QUECTEL_PRODUCT_EC25),
